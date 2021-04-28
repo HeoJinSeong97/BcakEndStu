@@ -9,6 +9,7 @@ import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 
 public class DBUtill {
 	public static Connection getMySqlConnection(){
+//		DB연결만을 위한 클래스.
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -27,6 +28,7 @@ public class DBUtill {
 		}
 		return conn;
 	}
+//	쿼리문을 실행하는 작업이 끝나면 close함수를 호출하여 연결을 끊어준다.
 	public static void close(Connection conn) {
 		if(conn != null) { try {
 			conn.close();
