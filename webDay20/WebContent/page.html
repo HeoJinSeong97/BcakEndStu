@@ -1,0 +1,56 @@
+<!-- ID,PW 찾기 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ID/PW 찾기</title>
+<link rel="icon" href="img/3.jpg">
+<style>
+   *{margin:10px;padding:0;}
+   body{
+   background-color: beige;
+   }
+   #ans{color:red;}
+</style>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    function f(){  
+        setTimeout('location.reload()',5000); 
+    }
+    f()
+    $(document).ready(function(){
+        
+        $("#bt").on("click",function(){
+        var id=$("#id").val();
+         //console.log(id);
+            var txt="해당 아이디는 없습니다.";
+            $.ajax({
+            type: "GET", // 데이터 읽어오는 방식
+            url: "data.json", // 파일(경로)명
+            dataType: "json", // 데이터타입(형태)
+            success: function(data){ // data == data.json의 데이터
+                $.each(data,function(index,value){
+                    if(id==value.id){
+                        txt=id+"님의 비밀번호는 ["+value.pw+"]입니다.";
+                    }
+                });
+                $("#ans").text(txt);
+            }, // 로드 성공시
+            error: function(){console.log("로드실패!")} // 로드 실패시
+            });
+        });
+    });
+   // 1. 단한번만 실행되게
+   // 2. 새로고침이 자동으로 이루어지도록
+</script>
+</head>
+<body>
+
+    <button onclick="history.go(-1)">뒤로가기</button>
+    <br><br>
+    <span>ID입력</span><input type="text" id="id"><button id="bt">비밀번호 찾기</button>
+    <br>
+    <div id="ans"></div>   
+
+</body>
+</html>
