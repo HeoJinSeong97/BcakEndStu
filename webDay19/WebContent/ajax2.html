@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="imgData.json"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        div{
+            height: 400px;
+        }
+        img{width: 500px;}
+    </style>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "imgData.json",
+            dataType: "json",
+            success: function(data){
+                var tag="";
+                $.each(data, function(index, value){
+                    tag+="<h1>"+value.title+"</h1>";
+                    tag+="<div><img src="+value.imageName+"></img></div>";
+                });
+                $("#d1").append(tag);
+            },
+            error: function(){console.log("로드실패")}
+        });
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>

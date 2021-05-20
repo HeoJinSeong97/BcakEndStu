@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="data.json"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        table{width: 100%;}
+        th, td{border: 1px solid black;text-align: center;}
+    </style>
+    <script>
+        $.ajax({
+            type: "GET", //데이터읽어오는방식
+            url: "data.json",//파일위치.
+            dataType: "json",//데이터타입
+            success: function(data){
+                var txt="";
+                $.each(data, function(index, value){
+                    txt+="<tr><td>";
+                    txt+=value.name+"</td>";
+                    txt+="<td>"+value.score1+"</td>";
+                    txt+="<td>"+value.score2+"</td>";
+                    txt+="<td>"+value.score3+"</td>";
+                    txt+="</tr>";
+                });
+                $("tbody").append(txt);
+            },
+            error: function(){console.log("로드실패")}
+
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <caption>학생시험점수결과</caption>
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>score1</td>
+                <td>score2</td>
+                <td>score3</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>

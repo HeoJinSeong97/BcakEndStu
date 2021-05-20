@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본효과</title>
+    <style>
+        .box{height: 300px;background-color: aquamarine;margin: 5px;display: none;}
+        .box2{height: 300px;background-color: darkcyan;margin: 5px;display: none;}
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $ (document).ready(function(){
+            $("#bt1").click("click", function(){
+                $(".box").show()
+            })
+            $("#bt2").click("click", function(){
+                $(".box").hide()
+            })
+            $("#bt3").click("click", function(){
+                $(".box").toggle()
+            })
+            $("#bt4").click("click", function(){
+                $(".box").slideToggle(1000)
+            })
+            $("#bt5").click("click", function(){
+                $(".box2").fadeToggle("slow", function(){
+                    $(this).text("Box2")
+                })
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+    <button id="bt1">show</button>
+    <button id="bt2">hide</button>
+    <button id="bt3">toggle</button>
+    <button id="bt4">slideToggle</button>
+    <div class="box"></div>
+
+    <button id="bt5">fadeToggle</button>
+    <div class="box2"></div>
+</body>
+</html>

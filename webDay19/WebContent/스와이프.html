@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>swiper</title>
+    <link rel="stylesheet" href="swiper.min.css">
+    <style>     
+        body {
+            font-size: 20px;
+            color: red;
+        }
+        header {
+            height: 50px;
+            background-color: lightgreen;
+            text-align: center;
+        }
+        /* swiper */
+        .visual .swiper-container{
+            max-height: calc();
+            max-width: calc(100% * 4);
+            margin: 0 auto;            
+            position: relative; 
+        }
+        .visual img{
+            vertical-align: top;
+            width: 100%;
+        }
+        /* swiper 하단 버튼 디자인  */
+        .visual .swiper-pagination{
+            position: absolute;
+            left: 0;
+            bottom: 3%;
+            z-index: 100;            
+            text-align: center;
+        }
+        .visual .swiper-pagination .swiper-pagination-bullet{
+            width: 12px;
+            height: 12px;
+            background: hotpink;
+            opacity: 1;
+        }
+        .visual .swiper-pagination .swiper-pagination-bullet-active{
+            background: blue;
+        }
+        /* swiper left, right 버튼 디자인  */
+        .visual .arrow{
+            position: absolute;
+            top: 50%;
+            font-size: 25px;
+            background: #000;
+            color: #fff;
+            z-index: 100;
+            line-height: 1;
+            margin-top: -20px;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .visual .next{
+            left: 10px;
+        }
+        .visual .prev{
+            right: 10px;
+        }
+        .content {
+            height: 300px;
+            background: lightgray;
+            text-align: center;
+        }
+        footer {
+            height: 50px;
+            text-align: center;
+        }
+    </style>    
+</head>
+<body>
+    <header>헤더</header>
+    <div class="visual">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><img src="./img/iu-blueming-uhdpaper.com-4K-7.304.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./img/iu-blueming-uhdpaper.com-4K-7.306.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./img/iu-singer-uhdpaper.com-4K-4.1443.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./img/iu-blueming-uhdpaper.com-4K-7.306.jpg" alt=""></a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="next arrow">&lt;</div>
+            <div class="prev arrow">&gt;</div>
+        </div>
+    </div>
+    <section class="content">콘텐츠</section>
+    <footer>푸터</footer>
+    <script src="swiper.min.js"></script>
+    <script>
+        /* 자동실행, left, right버튼 기능 api 추가 */
+        var swiper = new Swiper('.swiper-container', {
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false
+            },
+            slidesPerView: 1,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.next',
+                prevEl: '.prev',
+            }
+        });
+    </script>
+</body>
+</html>

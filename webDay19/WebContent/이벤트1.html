@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+        var i = 1
+        $("#bt1").click("click",function(){
+            i++
+            if(i%2==0){$("#box1").addClass("on")}else{
+                $("#box1").removeClass("on")
+            }
+            
+        }).trigger("click")
+        $("#bt2").click("click",function(){
+            i++
+            if(i%2==0){$("#box2").addClass("on")}else{
+                $("#box2").removeClass("on")
+            }
+            
+        }).trigger("click")
+        $("#bt3").click("click",function(){
+            $("#bt1").trigger("click")
+            $("#bt2").trigger("click")
+            
+        })
+    })
+</script>
+<style>
+    body{overflow: hidden;}
+    #box1{height: 100px;background-color: aquamarine;
+        transform: translateX(-95%);
+        transition: all ease 1s;
+    }
+    #box1.on{transform: translate(0);}
+    #box2.on{transform: translate(0);}
+    #box2{height: 100px;background-color: cornflowerblue;
+        transform: translateX(95%);
+        transition: all ease 1s;
+    }
+</style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <button id="bt1">버튼1</button>
+    <button id="bt2">버튼2</button>
+    <button id="bt2">버튼3</button>
+</body>
+</html>

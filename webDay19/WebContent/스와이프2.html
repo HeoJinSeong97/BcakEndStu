@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyB-KciPT3WWL7e5vuPdt4dUZNu5KqLkoqQ"></script>
+    <script>
+    //     function initMap() {
+    // const map = new google.maps.Map(document.getElementById("map"), {
+    //     zoom: 4,
+    //     center: { lat: -33, lng: 151 },
+    // });
+    // const image =
+    //     "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+    // const beachMarker = new google.maps.Marker({
+    //     position: { lat: -33.89, lng: 151.274 },
+    //     map,
+    //     icon: image,
+    // });
+    // }
+    var map
+    function initMap() {
+        var li = {lat:37.280694, lng:127.108668}
+        map = new google.map.Map(document.getElementById("map"),
+        {zoom:10,center:li})
+    }
+    initMap()
+    </script>
+    <style>
+        #map {
+        width: 500px;
+        height: 300px;
+        border: 1px solid blueviolet;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <button id="b1">ss</button>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script>
+        var b1 = document.getElementById('b1')
+        b1.addEventListener('click',f)
+        var map;
+        function initMap(){
+            var li={lat:37.499048, lng:127.037039};
+            map=new google.maps.Map(document.getElementById('map'),
+                    {zoom:10,center:li});
+            
+            new google.maps.Marker({position: li, map: map,label:"내가만든마커"})
+        }
+        initMap();
+        function f(){
+            var li={lat:37.499048, lng:127.037039};
+            map.panTo(li)
+            map.setZoom(10);
+        }
+    </script>
+    
+</body>
+</html>
