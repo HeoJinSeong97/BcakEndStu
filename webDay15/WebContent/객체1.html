@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var rect={x:10,y:20, area:function(){console.log(this.x * this.y)}}
+        function Rect(x,y){
+            this.x=x;
+            this.y=y;
+            // this.area=function(){
+            //     return this.x*this.y
+            // }
+        }
+        Rect.prototype.area=function(){return this.x*this.y}
+
+        var r1=new Rect(1,2)
+        var r2=new Rect(10,20)
+
+        console.log(rect.area())
+        console.log(r1)
+        console.log(r2.area())
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
