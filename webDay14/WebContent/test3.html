@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+<!--
+
+//-->
+var num1 = 10;
+var num2 = 20;
+var res = num1+num2;
+console.log(res);
+num1=++res;
+console.log(num1);
+num2=res++;
+console.log(num2);
+res -= 2;
+console.log(res);
+
+var table='<table>';
+table+='<tr><td>책이름</td><td>가격</td></tr>';
+table+='</table>';
+document.write(table);
+
+var num1 = 10;
+var num2 = '10';
+var num3 = 10;
+// ==는 타입을 구분하지 않고, ===는 타입까지 구분한다.
+console.log('결과1 '+(num1==num2));
+console.log('결과2 '+(num1==num3));
+console.log('결과3 '+(num1===num2));
+console.log('결과4 '+(num1===num3));
+
+console.log('결과1 '+(num1!=num2));
+console.log('결과2 '+(num1!=num3));
+console.log('결과3 '+(num1!==num2));
+console.log('결과4 '+(num1!==num3));
+
+var age = prompt('age','1');
+age = Number(age);
+var price = 1000;
+if (age<11) {
+	price = 200;
+}else if(age<21){
+	price = 500;
+}
+document.write('가격'+price);
+
+var ans = confirm('진행하겠음?');
+if(ans==true){
+	document.write('<h2>진행</h2>');
+}else{
+	document.write('<h2>진행취소</h2>');
+	
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

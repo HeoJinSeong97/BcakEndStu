@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* try{
+	console.log(e);
+}catch (e) {
+	console.log(e.message);
+} */
+var t1 = prompt('행','1');
+var t2 = prompt('열','1');
+t1 = Number(t1);
+t2 = Number(t2);
+var table = '<table>';
+var i = Number(0);
+var j = Number(0);
+for(i;i<t2;i++){
+	table += '<tr>';
+	for(j=0;j<t1;j++){		
+	table += '<td>'+i+'행'+j+'열</td>';
+	}	
+	table += '</tr>';
+}
+table += '</table>';
+document.write(table);
+</script>
+</head>
+<body>
+
+</body>
+</html>
