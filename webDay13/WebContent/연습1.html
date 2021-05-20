@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{
+   margin: 0;padding: 0;
+   }
+   li{   list-style: none;}
+  	.clear:after{
+   	content: "";
+	display: block;
+	clear: both;
+   }
+   header{ background-color: hotpink; height: 50px;}
+   header h1{float: left; margin-right: 50px;}
+   header ul{float: left;}
+   header ul li{float: left;}
+   #wrap{background-color: aliceblue;}
+   .menu2{
+   float: left;
+   width: 20%;
+   background-color: yellow;
+   }
+   .content_area{
+   display: inline-block;
+   background-color: lightblue;
+   width: 80%;
+   float: right;
+   }
+   footer{
+   width: 100%;
+   text-align: center;
+   background-color: lightgray;
+   height: 40px;
+   }
+</style>
+</head>
+<body>
+   <div id="wrap">
+      <header class="clear">
+         <h1><a href="#">로고</a></h1>
+         <ul class="menu1">
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+         </ul>
+      </header>
+      <div id="container" class="clear">
+         <ul class="menu2">
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+         </ul>
+         <div class="content_area">
+            <p>내용1<br>
+            내용2<br>
+            내용3<br>
+            내용4<br>
+            내용5<br>
+            내용2<br>
+            내용3<br>
+            내용4<br>
+            내용5<br>
+            내용2<br>
+            내용3<br>
+            내용4<br>
+            내용5<br>
+            내용2<br>
+            내용3<br>
+            내용4<br>
+            내용5<br>
+            내용2<br>
+            내용3<br>
+            내용4<br>
+            내용5<br>
+            내용2<br>
+            내용3<br>
+            내용4<br>
+            내용5
+            </p>
+         </div>
+      </div>
+      <footer>
+         <p>copyright</p>
+      </footer>
+   </div>
+</body>
+</html>
