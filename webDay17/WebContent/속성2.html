@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prop() 메서드</title>
+    <script src="jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        console.log($("input:checkbox").eq(0).prop("checked")) // 필터선택자 :eq(i)
+        $("input:checkbox").eq(0).prop("checked", true)
+        
+    });
+</script>
+</head>
+<body>
+    <input type="checkbox" id="c1">체크1
+    <input type="checkbox" id="c2">체크2
+</body>
+</html>

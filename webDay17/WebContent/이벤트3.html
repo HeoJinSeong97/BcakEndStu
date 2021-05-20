@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .on{
+            background-color: darkgray;
+        }
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#b1").on("click", function(){
+                alert("이벤트연결!")
+            })
+            $("#b2").on({mouseenter:function(){
+                $(this).toggleClass("on")
+            }, mouseleave:function(){
+                $(this).toggleClass("on")
+            }})
+            function f(){
+                alert("!!!")
+            }
+            $("#b3").one("click",f)
+        })
+    </script>
+</head>
+<body>
+    <button id="b1">버튼1</button>
+    <button id="b2">버튼2</button>
+    <button id="b3">버튼3</button>
+    <button id="b4">버튼4</button>
+    <button id="b5">버튼5</button>
+</body>
+</html>

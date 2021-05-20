@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        img{
+            width: 300px;
+            margin: 10px;
+            /* position: fixed; */
+        }
+        #container .page button{
+            border: 1px solid blue;
+            background-color: aqua;
+            color: black;
+            width: 20px;
+            height: 20px;
+        }
+        #container .photo{
+            width: 320px;
+            height: 200px;
+            margin: 10px;
+            position: fixed;
+            border: 1px solid blue;
+            overflow: hidden;
+        }
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".b1").click(function(){
+                current--;
+                if (current==0) {
+                    current=totalNum
+                }
+                $(".page_n > span:first").text(current)
+                $(".photo div:last").insertBefore(".photo div:first")
+            })
+            $(".b2").click(function(){
+                current++;
+                if (current>totalNum) {
+                    current=1
+                }
+                $(".page_n > span:first").text(current)
+                $(".photo div:first").insertAfter(".photo div:last")
+            })
+            var totalNum = $(".photo > div").length;
+            var current = 1
+            $(".page_n > span:first").text(current)
+            $(".page_n > span:last").text(totalNum)
+        })
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="page">
+            <button class="b1">&lt;</button>
+            <span class="page_n">
+                <span></span> / <span></span>
+            </span>
+            <button class="b2">&gt;</button>
+        </div>
+        <div class="photo">
+            <div><img src="./img/iu-blueming-uhdpaper.com-4K-7.304.jpg" alt="사진1" id="img1"></div>
+            <div><img src="./img/iu-blueming-uhdpaper.com-4K-7.306.jpg" alt="사진1" id="img2"></div>
+            <div><img src="./img/iu-singer-uhdpaper.com-4K-4.1443.jpg" alt="사진1" id="img3"></div>
+        </div>
+    </div>
+</body>
+</html>

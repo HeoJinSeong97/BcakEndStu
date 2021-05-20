@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#c1").append("<h1>내용2</h1>")
+            $("#c1").prepend("<h6>내용3</h6>")
+            $("<h6>내용3</h6>").appendTo("#c1")
+        })
+    </script>
+</head>
+<body>
+    <div id="c1">내용1</div>
+</body>
+</html>

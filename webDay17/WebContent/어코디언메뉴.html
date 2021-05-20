@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>어코디언 메뉴</title>
+<style>
+   *{
+   margin: 0;
+   padding: 0;
+   }
+   li{
+   list-style:none;
+   }
+   a{
+   color: indigo;
+   font-size:15px;
+   text-decoration: none;
+   }
+   #menu{
+   width:50%;
+   height:100%;
+   background: darkgreen;
+   }
+   #menu a{
+   display: block;
+   padding: 10px;
+   border: 1px solid yellow;
+   background: lightgreen;
+   }
+   #menu a.m.on{
+   /*선택했을때 script에서 클래스속성추가*/
+   color: red;
+   font-size: 20px;
+   }
+   #menu li ul{
+   display: none;
+   }
+   #menu li ul.on{
+   display: block;
+   }   
+</style>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+   $(document).ready(function(){
+      $("#menu a.m").click(function(){
+         $(this).next().addBack().toggleClass("on");
+         // $(this).next() == ul요소
+      });
+   });
+</script>
+</head>
+<body>
+
+   <ul id="menu">
+      <li><a href="#" class="m">메뉴1</a>
+         <ul>
+            <li><a href="#">메뉴1-1</a></li>
+            <li><a href="#">메뉴1-2</a></li>
+            <li><a href="#">메뉴1-3</a></li>
+         </ul>
+      </li>
+      <li><a href="#" class="m">메뉴2</a>
+         <ul>
+            <li><a href="#">메뉴2-1</a></li>
+            <li><a href="#">메뉴2-2</a></li>
+            <li><a href="#">메뉴2-3</a></li>
+         </ul>
+      </li>
+      <li><a href="#" class="m">메뉴3</a>
+         <ul>
+            <li><a href="#">메뉴3-1</a></li>
+            <li><a href="#">메뉴3-2</a></li>
+            <li><a href="#">메뉴3-3</a></li>
+         </ul>
+      </li>
+   </ul>
+
+</body>
+</html>

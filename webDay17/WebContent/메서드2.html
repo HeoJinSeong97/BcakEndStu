@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js">
+    </script>
+    <script>
+        // $(document).ready(function(){
+        //     var arr = ["바나나", "키워", "사과"]
+        //     var newArr = $.map(arr, function(value, index){
+        //         if (index>=1) {
+        //             return value;
+        //         }
+        //     })
+        //     console.log(newArr.toString())
+        // })
+        // $(document).ready(function(){
+        //     console.log($("#d1").text())
+        //     $("#d1").text("망고")
+        //     $("#d2 > div").text(function(index, text){
+        //         return index+"번, "+text
+        //     })
+        // })
+        $(document).ready(function(){
+            console.log($("#d1").html())
+            $("#d1").html("<em>사과</em>")
+            $("#d2 > div").html(function(){
+                return "<strong>"+$(this).text()+"</strong>"
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="d1">사과</div>
+    <div id="d2">
+        <div><em>키위</em></div>
+        <div>바나나</div>
+    </div>
+
+</body>
+</html>

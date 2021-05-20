@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.6.0.min.js">
+</script>
+<script>
+    $(document).ready(function(){
+            console.log('연결성공')
+        })
+    $(document).ready(function(){
+        $("div").each(function(){
+            console.log($(this).attr("id"))
+        });
+    })
+</script>
+</head>
+<body>
+<div id="c1">1</div>
+<div id="c2">2</div>
+<div id="c3">3</div>
+</body>
+</html>

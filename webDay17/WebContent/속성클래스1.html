@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .c0, .c1, .c2{
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+        }
+        #d1, #d2{
+            width: 40px;
+            height: 40px;
+            border: 2px solid blue;
+        }
+    </style>
+    <script src="jquery-3.6.0.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            console.log('연결성공')
+        })
+        $(document).ready(function(){
+            $("#d1").addClass("c1")
+            $("#d2 > div").addClass(function(index){
+                return "c"+index
+            })
+        })
+        // $(document).ready(function(){
+        //     $("#d1").remove();
+        // })
+    </script>
+</head>
+<body>
+    <div id="d1">사과</div>
+    <div id="d2">
+        <div><em>키위</em></div>
+        <div>바나나</div>
+    </div>
+</body>
+</html>

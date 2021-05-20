@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            padding: 50px;
+            background-color: cornflowerblue;
+        }
+        .in{
+            padding: 30px;
+            background-color: beige;
+        }
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".d1").mouseover(function(){
+                $(".display").append("<strong>마우스오버</strogn>")
+            });
+            $(".d2").mouseenter(function(){
+                $(".display").append("<em>마우스엔터</em>")
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="d1 bg">
+        <div class="in">마우스오버</div>
+    </div>
+    <div class="d2 bg">
+        <div class="in">마우스엔터</div>
+    </div>
+    <div class="display"></div>
+</body>
+</html>

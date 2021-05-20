@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        console.log($("#site > a:eq(0)").attr("href")) // 필터선택자 :eq(i)
+        $("#site > a:eq(0)").attr("href", "https://www.daum.net/").text("다음")
+        $("#site > a:eq(1)").attr("href", "https://www.naver.com/").text("네이버")
+    });
+</script>
+</head>
+<body>
+    <div id="site">
+        <a href="https://www.naver.com/">네이버</a>
+        <a href="https://www.daum.net/">다음</a>
+    </div>
+</body>
+</html>
