@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="request.jsp" method="post">
+	<table>
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="name"/></td>
+		</tr>
+		<tr>
+			<td>과일</td>
+			<td><select name="fruit" id="">
+				<option value="사과" selected="selected">사과</option>
+				<option value="바나나" selected="selected">바나나</option>
+				<option value="키위" selected="selected">키위</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>여행지</td>
+			<td><input type="checkbox" name="ck" value="하와이"/>하와이<input type="checkbox" name="ck" value="일본"/>일본</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="결과"/></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
