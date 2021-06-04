@@ -1,0 +1,37 @@
+자바빈즈
+GUI 화면을 구성하는 위젯 제작을 위해 만들어짐
+특정한 동작을 독립적으로 수행하는 컴포넌트
+> 프로그램 모듈화
+
+JSP빈즈
+JSP와 연동하려고 만들어진 컴포넌트 클래스
+주로 DB와 연동
+JSP 액션과 연동이됨
+1)  DB연동을 포함해서 데이터와 함꼐 기능을 구현하는 방법
+DO + DAO 클래스 통합
+DO : data object 테이블과 대응되는 코드, 필드 관련
+DAO : data access object DB점속 관룐 입력.삭제.출력과 같은 기능 구현
+2)DO, DAO 클래스 분리하는 방법
+유지보수에 유리
+데이터 매핑 / DB접속, 입력, 삭제, 출력 등의 기능
+
+빈즈 클래스
+기본적으로 빈즈 클래스는 자바클래스이므로, 자바 클래스 구성을 따름
+빈즈는 기본생성자를 요구합니다.
+구성
+class xxxBean{
+	private String xxx;//DB테이블 칼럼명과 매칭
+	public String getXxx(){}getter,setter -> JSP액션과 연동
+}
+
+JPS에서 빈즈불러오기
+<jps:useBean>액션으로 객체 생성
+<jps:useBean id="인스턴트명" class="패키지.클래스" scope="유효범위(page/session/application/request)"
+
+흐름
+HTML form태그에서 데이터입력
+jsp 페이지로 전달
+setProperty > setter메서드 자동 호출
+getProperty > getter메서드 자동 호출됨
+
+
